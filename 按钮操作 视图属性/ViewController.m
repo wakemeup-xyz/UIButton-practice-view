@@ -39,6 +39,7 @@ enum zoomInOrOut{
     UIButton *button = (UIButton *)sender;
     
     CGRect tmpFrame = self.headImageView.frame;
+
     switch (button.tag) {
 //        case 100:tmpFrame.origin.x -= 5;  break; //左
 //        case 101:tmpFrame.origin.y -= 5;  break; //上
@@ -50,7 +51,10 @@ enum zoomInOrOut{
         case move_down:tmpFrame.origin.y += 5;  break; //下
         default:break;
     }
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
     self.headImageView.frame = tmpFrame;
+    [UIView commitAnimations];
 }
 
 
@@ -89,10 +93,13 @@ enum zoomInOrOut{
         tmpBounds.size.height -= 10;
         tmpBounds.size.width -= 10;
     }
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:3];
     self.headImageView.bounds = tmpBounds;
+    [UIView commitAnimations];
 }
 
-啦啦啦
+
 
 
 @end
