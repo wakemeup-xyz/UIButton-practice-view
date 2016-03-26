@@ -39,6 +39,7 @@ enum zoomInOrOut{
     UIButton *button = (UIButton *)sender;
     
     CGRect tmpFrame = self.headImageView.frame;
+
     switch (button.tag) {
 //        case 100:tmpFrame.origin.x -= 5;  break; //左
 //        case 101:tmpFrame.origin.y -= 5;  break; //上
