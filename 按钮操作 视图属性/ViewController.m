@@ -50,7 +50,10 @@ enum zoomInOrOut{
         case move_down:tmpFrame.origin.y += 5;  break; //下
         default:break;
     }
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
     self.headImageView.frame = tmpFrame;
+    [UIView commitAnimations];
 }
 
 
@@ -81,18 +84,21 @@ enum zoomInOrOut{
     CGRect tmpBounds = self.headImageView.bounds;
     if (button.tag == zoomIn)
     {
-        tmpBounds.size.height += 10;
-        tmpBounds.size.width += 10;
+        tmpBounds.size.height += 1;
+        tmpBounds.size.width += 1;
     }
     else
     {
-        tmpBounds.size.height -= 10;
-        tmpBounds.size.width -= 10;
+        tmpBounds.size.height -= 1;
+        tmpBounds.size.width -= 1;
     }
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:3];
     self.headImageView.bounds = tmpBounds;
+    [UIView commitAnimations];
 }
 
-啦啦啦
+
 
 
 @end
